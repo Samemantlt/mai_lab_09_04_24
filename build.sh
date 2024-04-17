@@ -1,0 +1,1 @@
+gcc -g main.c database.c database.h abiturient.c abiturient.h
