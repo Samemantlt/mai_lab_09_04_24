@@ -15,11 +15,13 @@ void selectAll(char* dbFileName)
     tDatabase database = Database_Create(dbFileName);
     tAbiturent abiturent;
 
+    printf("[SELECT] all\n");
     Abiturent_PrintTableHeader();
     while (Database_ReadNext(&database, &abiturent))
     {
         Abiturent_PrintTableLine(&abiturent);
     }
+    printf("\n");
 }
 
 void selectWhereScoreEquals(char* dbFileName, int targetScore)
@@ -27,12 +29,14 @@ void selectWhereScoreEquals(char* dbFileName, int targetScore)
     tDatabase database = Database_Create(dbFileName);
     tAbiturent abiturent;
 
+    printf("[SELECT] where [score] = %i\n", targetScore);
     Abiturent_PrintTableHeader();
     while (Database_ReadNext(&database, &abiturent))
     {
         if (ExamScore_Sum(&abiturent.examScore) == targetScore)
             Abiturent_PrintTableLine(&abiturent);
     }
+    printf("\n");
 }
 
 void helpMessage(char* executableName)

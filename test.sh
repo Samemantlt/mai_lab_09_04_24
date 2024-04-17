@@ -6,18 +6,10 @@ rm ./db
 ./a.out ./db insert Babulkin TR o 1 - 2 3 4 5 -
 ./a.out ./db insert Churchhella VK f 16 - 79 80 100 101 +
 
-echo ""
-echo "All"
 ./a.out ./db select-all
 
-echo ""
-echo "Sum 360"
 ./a.out ./db select-where-score-eq 360
 
-echo ""
-echo "Sum 61"
 ./a.out ./db select-where-score-eq 61
 
-echo ""
-echo "Sum 60"
 ./a.out ./db select-where-score-eq 60
